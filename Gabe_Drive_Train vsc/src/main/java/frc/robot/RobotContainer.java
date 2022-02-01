@@ -19,6 +19,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final DriveTrain m_drivetrain;
+  public static Joystick m_driverJoystick;
+  
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
@@ -26,6 +28,8 @@ public class RobotContainer {
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     this.m_drivetrain = new DriveTrain();
+
+    this.m_driverJoystick = new Joystick(0);
     // Configure the button bindings
     configureButtonBindings();
   }
